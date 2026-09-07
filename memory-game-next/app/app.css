@@ -1,0 +1,155 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #121214;
+  color: #e1e1e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.contenedor-juego {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- ENCABEZADO --- */
+.header-juego {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-juego h1 {
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  color: #e1e1e6;
+}
+
+.btn-reiniciar, .btn-jugar-nuevo {
+  background-color: #4ade80; 
+  color: #121214;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-reiniciar:hover, .btn-jugar-nuevo:hover {
+  background-color: #22c55e;
+}
+
+/* --- GRILLA DEL TABLERO 4X4 --- */
+.grilla-tablero {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  background-color: #202024;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* --- LAS FICHAS CIRCULARES --- */
+.ficha {
+  aspect-ratio: 1; 
+  border-radius: 50%; 
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+/* Ficha boca abajo */
+.ficha.oculta {
+  background-color: #2d2d34;
+  color: #2d2d34;
+}
+
+.ficha.oculta:hover {
+  background-color: #3a3a44;
+}
+
+/* Ficha dada vuelta o emparejada */
+.ficha.abierta {
+  background-color: #3b82f6; 
+  color: #ffffff;
+}
+
+.ficha.encontrada {
+  background-color: #10b981 !important; 
+  color: #ffffff;
+  cursor: default;
+}
+
+/* --- PANTALLA DE VICTORIA --- */
+.pantalla-victoria {
+  background-color: #202024;
+  padding: 32px;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.pantalla-victoria h2 {
+  color: #4ade80;
+}
+
+.pantalla-victoria .resumen {
+  background-color: #121214;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
+.pantalla-victoria .resumen p {
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+/* --- MARCADORES DEL FOOTER --- */
+.footer-marcador {
+  display: flex;
+  gap: 16px;
+}
+
+.tarjeta-marcador {
+  flex: 1;
+  background-color: #202024;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.tarjeta-marcador h3 {
+  font-size: 12px;
+  color: #7c7c8a;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.tarjeta-marcador p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e1e1e6;
+}
